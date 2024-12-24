@@ -1,0 +1,378 @@
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.training-section {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 14px;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.answers {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.interval-btn {
+    background-color: #2196F3;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    min-height: 30px;
+}
+
+.standard-note {
+    background-color: #9c27b0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    padding: 15px 30px;
+}
+
+.standard-note:hover {
+    background-color: #7b1fa2;
+}
+
+.main-controls {
+    margin: 20px 0;
+}
+
+.exercise-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.selector-btn {
+    background-color: #2196F3;
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.selector-btn.active {
+    background-color: #1976D2;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.chord-btn, .interval-btn {
+    background-color: #2196F3;
+}
+
+.standard-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.interval-answer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.interval-answer-group {
+    text-align: center;
+}
+
+.interval-answer-group h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.lower-note .note-btn {
+    background-color: #2196F3;
+}
+
+.higher-note .note-btn {
+    background-color: #FF9800;
+}
+
+.note-btn.selected {
+    border: 2px solid #4CAF50;
+    padding: 4px 10px;
+}
+
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 15px 0;
+}
+
+.mode-btn {
+    background-color: #FF9800;
+    padding: 8px 14px;
+}
+
+.mode-btn.active {
+    background-color: #F57C00;
+    font-weight: bold;
+}
+
+.chord-answer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chord-type-group, .chord-root-group {
+    text-align: center;
+}
+
+.chord-type-group h3, .chord-root-group h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.chord-btn.selected {
+    border: 3px solid #4CAF50;
+    padding: 7px 17px;
+}
+
+.octave-group {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.octave-group h4 {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.interval-answer-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.submit-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 24px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* 添加反馈样式 */
+.feedback {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.feedback.hidden {
+    display: none;
+}
+
+.feedback-content {
+    padding: 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    display: none;
+}
+
+.feedback-content.correct {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.feedback-content.incorrect {
+    background-color: #fbe9e7;
+    color: #c62828;
+    border: 1px solid #ffab91;
+}
+
+.feedback .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.feedback .correct-answer {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* 当显示反馈时，只显示相应的内容 */
+.feedback.show-correct .correct {
+    display: block;
+}
+
+.feedback.show-incorrect .incorrect {
+    display: block;
+}
+
+.selected-notes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.note-slot {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background-color: #f5f5f5;
+}
+
+.note-slot.empty {
+    color: #999;
+}
+
+.note-slot.filled {
+    background-color: #e3f2fd;
+    border-color: #2196F3;
+    color: #1976D2;
+    font-weight: bold;
+}
+
+.note-slot.current {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+}
+
+.range-selector {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 15px 0;
+}
+
+.range-btn {
+    background-color: #2196F3;
+    padding: 8px 14px;
+}
+
+.range-btn.active {
+    background-color: #1976D2;
+    font-weight: bold;
+}
+
+.higher-octave {
+    margin-top: 10px;
+}
+
+.higher-octave.hidden {
+    display: none;
+}
+
+/* 响应式布局优化 */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .answers {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .note-btn {
+        flex: 0 0 auto;
+        min-width: 36px;
+        min-height: 36px;
+        padding: 5px 10px;
+    }
+
+    .mode-selector, .range-selector {
+        flex-wrap: wrap;
+    }
+
+    .feedback-content {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* 优化触摸反馈 */
+.note-btn:active, 
+.mode-btn:active, 
+.range-btn:active,
+.submit-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
+
+/* 优化按钮选中状态 */
+.note-btn.selected {
+    border: 2px solid #4CAF50;
+    padding: 4px 10px;
+}
+ 

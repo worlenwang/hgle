@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>听力训练</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>听力训练</h1>
+        
+        <!-- 标准音 -->
+        <div class="standard-section">
+            <button id="playStandardA" class="standard-note">播放标准音La</button>
+        </div>
+
+        <!-- 练习类型选择 -->
+        <div class="exercise-selector">
+            <button class="selector-btn active" data-section="single">单音练习</button>
+            <button class="selector-btn" data-section="interval">音程练习</button>
+        </div>
+        
+        <!-- 单音练习部分 -->
+        <div class="training-section" id="single-section">
+            <h2>单音练习</h2>
+            <div class="main-controls">
+                <button id="playNote">播放音符</button>
+                <button id="replayNote">重播音符</button>
+            </div>
+            <div class="answers">
+                <button class="note-btn" data-note="C4">Do</button>
+                <button class="note-btn" data-note="D4">Re</button>
+                <button class="note-btn" data-note="E4">Mi</button>
+                <button class="note-btn" data-note="F4">Fa</button>
+                <button class="note-btn" data-note="G4">Sol</button>
+                <button class="note-btn" data-note="A4">La</button>
+                <button class="note-btn" data-note="B4">Si</button>
+            </div>
+        </div>
+
+        <!-- 音程练习部分 -->
+        <div class="training-section hidden" id="interval-section">
+            <h2>音程练习</h2>
+            
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="melodic">旋律音程</button>
+                <button class="mode-btn" data-mode="harmonic">和声音程</button>
+            </div>
+
+            <div class="range-selector">
+                <button class="range-btn active" data-range="single">单八度(C4-B4)</button>
+                <button class="range-btn" data-range="double">双八度(C4-B5)</button>
+            </div>
+            
+            <div class="main-controls">
+                <button id="playInterval">播放音程</button>
+                <button id="replayInterval">重播音程</button>
+            </div>
+            
+            <div class="interval-answer-section">
+                <div class="answers">
+                    <button class="note-btn" data-note="C4">Do</button>
+                    <button class="note-btn" data-note="D4">Re</button>
+                    <button class="note-btn" data-note="E4">Mi</button>
+                    <button class="note-btn" data-note="F4">Fa</button>
+                    <button class="note-btn" data-note="G4">Sol</button>
+                    <button class="note-btn" data-note="A4">La</button>
+                    <button class="note-btn" data-note="B4">Si</button>
+                    <div class="higher-octave hidden">
+                        <button class="note-btn" data-note="C5">Do</button>
+                        <button class="note-btn" data-note="D5">Re</button>
+                        <button class="note-btn" data-note="E5">Mi</button>
+                        <button class="note-btn" data-note="F5">Fa</button>
+                        <button class="note-btn" data-note="G5">Sol</button>
+                        <button class="note-btn" data-note="A5">La</button>
+                        <button class="note-btn" data-note="B5">Si</button>
+                    </div>
+                </div>
+                <button id="submitInterval" class="submit-btn">提交答案</button>
+                <div class="feedback hidden">
+                    <div class="feedback-content correct">
+                        <span class="icon">✓</span>
+                        <span class="text">回答正确！</span>
+                    </div>
+                    <div class="feedback-content incorrect">
+                        <span class="icon">✗</span>
+                        <span class="text">回答错误，正确答案是：</span>
+                        <span class="correct-answer"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
